@@ -1,0 +1,46 @@
+<div ng-show="status" class="alert alert-success alert-dismissable">
+  <i class="fa fa-check"></i>
+  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+  <b>Info: </b> {{status}}
+</div>
+
+<div class="box-header">
+  <h3 class="box-title">edit a news</h3>
+</div>
+
+<form role="form" ng-submit="updateNews()">
+<div class="box-body">
+  <div class="form-group">
+    <label for="title" >Title</label>
+    <input type="text" ng-model="news.title" class="form-control" id="title" />
+  </div>
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="text" ng-model="news.date" class="form-control" id="date" />
+  </div>
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea rows="3" ng-model="news.content" class="form-control" id="content" ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="catch_image">Catch image</label>
+    <button class="btn btn-primary" id="upload_catch_image"
+            ngf-select ng-model="file"
+            ngf-multiple="false"
+            ngf-accept="'image/*'"
+      >Upload</button>
+    <p class="help-block">JPEG catch image for the news.
+      <br/>
+      <img ngf-src="file[0]" src="{{serverImgUrl+'/'+news.catchImage}}" ngf-default-src="{{serverImgUrl+'/'+news.catchImage}}" ngf-accept="'image/*'" style="width:15%;">
+    </p>
+    <input type="hidden" id="catch_image" ng-model="news.catchImage"/>
+  </div>
+  <div class="form-group">
+    <div class="box-footer">
+      <input type="submit" class="btn btn-primary" value="Submit"/>
+    </div>
+  </div>
+</div>
+</form>
+
+

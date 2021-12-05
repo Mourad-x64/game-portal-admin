@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-8">
+    <div class="box" ui-view>
+      <div ng-show="status" class="alert alert-success alert-dismissable">
+        <i class="fa fa-check"></i>
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <b>Info: </b> {{status}}
+      </div>
+      <div ng-show="error" class="alert alert-danger alert-dismissable">
+        <i class="fa fa-ban"></i>
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <b>Alert!</b> {{error}}
+      </div>
+      <div class="box-header">
+        <h3 class="box-title">News list.</h3>
+        <div class="box-tools">
+          <div class="input-group">
+            <input name="table_search" class="form-control input-sm pull-right" style="width: 150px;"
+                   placeholder="Search" type="text">
+
+            <div class="input-group-btn">
+              <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body table-responsive">
+        <table class="table table-bordered">
+          <form role="form">
+            <tbody>
+            <tr>
+              <th style="width: 10px;">
+                <input id="all" type="checkbox" class="css-checkbox">
+                <label for="all" class="css-label"></label>
+              </th>
+              <th>Thumbnail</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th style="width: 155px;">Actions</th>
+            </tr>
+
+
+            <tr class="entry" ng-repeat="news in newsList" align="middle">
+              <td>
+                <input ng-model="news.id" id="check{{news.id}}" type="checkbox" class="css-checkbox">
+                <label for="check{{news.id}}" class="css-label"></label>
+              </td>
+              <td><img ng-src="{{serverImgUrl+'/'+news.catchImage}}" alt="" style="width: 25%;"/></td>
+              <td>{{news.title}}</td>
+              <td>{{news.content}}</td>
+              <td>
+                <a ui-sref="news.edit({ id : '{{news.id}}' })" class="btn btn-primary btn-sm"  role="button">Edit</a>
+                <button id="del{{news.id}}" ng-click="deleteNews(news.id)" class="btn btn-danger btn-sm del" >Delete</button>
+              </td>
+            </tr>
+
+
+            </tbody>
+          </form>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <!-- .box-footer -->
+      <div class="box-footer">
+        <a ui-sref="news.create" class="btn btn-primary btn-sm"  role="button">Add</a>
+      </div>
+      <!-- .box-footer -->
+    </div>
+    <!-- /.box -->
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/.jshintrc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/news/news.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/resources/resources.news.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/news/create.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/news/edit.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/news/list.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bower.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/karma.conf.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/unit/index/index.spec.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/unit/news/news.spec.js" charset="UTF-8" />
+  </component>
+</project>
